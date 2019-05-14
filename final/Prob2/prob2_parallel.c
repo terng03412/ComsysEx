@@ -32,10 +32,8 @@ void *worker(void *arg)
     int MAX = SIZE;
     for (i = mypart * (MAX / 4); i < (mypart + 1) * (MAX / 4); i++)
         if (buf[i] < part_min)
-        {
             part_min = buf[i];
-            // sleep(0.001);
-        }
+    // printf("%d\n",part_min);
 
     // there may be more code here
     /* $begin  */
@@ -55,10 +53,6 @@ void *worker(void *arg)
 #endif
     }
     /* $end  */
-
-    // printf("Min value is = %d\n", part_min);
-    // if (part_min < min)
-    //     min = part_min;
 }
 
 int main()
