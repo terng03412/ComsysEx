@@ -5,18 +5,23 @@
 int min;
 int buf[SIZE];
 
-int main() {
+int main()
+{
     FILE *ptr;
     int i = 0, count = 0;
     ptr = fopen("int_in.txt", "r");
-    while (fscanf(ptr, "%d ", &buf[count]) != EOF) {
+    while (fscanf(ptr, "%d ", &buf[count]) != EOF)
+    {
         count++;
     }
     printf("Total numbers read = %d\n", count);
 
     min = 0x7fffffff;
-    for (i=0; i<SIZE; i++) {
-        if (buf[i] < min) min = buf[i];
+    for (i = 0; i < SIZE; i++)
+    {
+        if (buf[i] < min)
+            min = buf[i];
+        sleep(0.001);
     }
     printf("Min value is = %d\n", min);
     return 0;
